@@ -2,11 +2,25 @@
 
 set -e
 
-curl -O https://raw.githubusercontent.com/spinnaker/halyard/master/install/debian/InstallHalyard.sh
+#curl -O https://raw.githubusercontent.com/spinnaker/halyard/master/install/debian/InstallHalyard.sh
 sudo bash InstallHalyard.sh --user ubuntu
-curl -fsSL get.docker.com -o get-docker.sh
-sh get-docker.sh
+
+sudo apt-get update -y
+
+sudo usermod sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common-aG docker ubuntu -y
+    
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+sudo apt-key fingerprint 0EBFCD88
+
+sudo apt-get install docker.io
+
 sudo usermod -aG docker ubuntu
+
 sudo docker run -p 127.0.0.1:9090:9000 -d --name minio1 -v /mnt/data:/data -v /mnt/config:/root/.minio minio/minio server /data
 
 sudo apt-get -y install jq apt-transport-https

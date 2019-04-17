@@ -1,10 +1,11 @@
 #!/bin/bash
 
 # env flags that need to be set:
-CLIENT_ID=myClientId
-CLIENT_SECRET=myClientSecret
-PROVIDER=google|github|azure
-REDIRECT_URI=http://ip:8084/login
+CLIENT_ID=860be3313b965e246629
+CLIENT_SECRET=102a61493033948b9c4f3a4ea27b3d5c7980188c
+PROVIDER=github
+MY_IP=`curl -s ifconfig.co`
+REDIRECT_URI=http://${MY_IP}:8084/login
 
 set -e
 
@@ -31,6 +32,7 @@ hal config security authn oauth2 edit \
   --client-id $CLIENT_ID \
   --client-secret $CLIENT_SECRET \
   --provider $PROVIDER
+  
 hal config security authn oauth2 enable
 
 hal config security authn oauth2 edit --pre-established-redirect-uri $REDIRECT_URI

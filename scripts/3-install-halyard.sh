@@ -9,11 +9,11 @@ sudo update-halyard
 
 sudo apt-get update -y
 
-sudo usermod sudo apt-get install \
+sudo apt-get install \
     apt-transport-https \
     ca-certificates \
     curl \
-    software-properties-common-aG docker ubuntu -y
+    software-properties-common
     
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 

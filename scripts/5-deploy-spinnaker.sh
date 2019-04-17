@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # env flag that need to be set:
-SPINNAKER_VERSION=1.9.5
+SPINNAKER_VERSION=1.11.12
 
 set -e
 

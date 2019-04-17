@@ -5,6 +5,8 @@ set -e
 #curl -O https://raw.githubusercontent.com/spinnaker/halyard/master/install/debian/InstallHalyard.sh
 sudo bash InstallHalyard.sh --user ubuntu
 
+sudo update-halyard
+
 sudo apt-get update -y
 
 sudo usermod sudo apt-get install \

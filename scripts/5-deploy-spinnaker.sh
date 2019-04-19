@@ -1,5 +1,12 @@
 #!/bin/bash
 
+#install xrdp in AZURE
+
+sudo apt-get update -y
+sudo apt-get install xfce4 -y
+sudo apt-get install xrdp -y
+sudo systemctl enable xrdp
+
 # install dependencies
 sudo apt update
 sudo apt-get -y install redis-server

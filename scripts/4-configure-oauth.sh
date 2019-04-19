@@ -8,11 +8,7 @@
 CLIENT_ID=d6f056b328e711341cd6
 CLIENT_SECRET=b7dba4917a54f871c440ef5327c29deecdddf54f
 PROVIDER=github
-#MY_IP=`curl -s ifconfig.co`
-#CLIENT_ID=545191397930-4fq8onr8l4a1vvdp50tqqqnti2qgq8cb.apps.googleusercontent.com
-#CLIENT_SECRET=Jy-tZUobamBwPUNqZBVOU5zr
-MY_IP=ec2-13-250-103-107.ap-southeast-1.compute.amazonaws.com
-#PROVIDER=google
+MY_IP=`curl -s ifconfig.co`
 REDIRECT_URI=http://${MY_IP}:8084/login
 
 set -e
@@ -40,7 +36,6 @@ hal config security authn oauth2 edit \
   --client-id $CLIENT_ID \
   --client-secret $CLIENT_SECRET \
   --provider $PROVIDER \
-  --user-info-requirements hd=${MY_IP}
   
 hal config security authn oauth2 enable
 

@@ -1,10 +1,18 @@
 #!/bin/bash
 
 # env flags that need to be set:
-CLIENT_ID=860be3313b965e246629
-CLIENT_SECRET=102a61493033948b9c4f3a4ea27b3d5c7980188c
+
+
+
+
+CLIENT_ID=d6f056b328e711341cd6
+CLIENT_SECRET=b7dba4917a54f871c440ef5327c29deecdddf54f
 PROVIDER=github
-MY_IP=`curl -s ifconfig.co`
+#MY_IP=`curl -s ifconfig.co`
+#CLIENT_ID=545191397930-4fq8onr8l4a1vvdp50tqqqnti2qgq8cb.apps.googleusercontent.com
+#CLIENT_SECRET=Jy-tZUobamBwPUNqZBVOU5zr
+MY_IP=ec2-13-250-103-107.ap-southeast-1.compute.amazonaws.com
+#PROVIDER=google
 REDIRECT_URI=http://${MY_IP}:8084/login
 
 set -e
@@ -26,12 +34,13 @@ if [ -z "${REDIRECT_URI}" ] ; then
   exit
 fi
 
-MY_IP=`curl -s ifconfig.co`
+#MY_IP=`curl -s ifconfig.co`
 
 hal config security authn oauth2 edit \
   --client-id $CLIENT_ID \
   --client-secret $CLIENT_SECRET \
-  --provider $PROVIDER
+  --provider $PROVIDER \
+  --user-info-requirements hd=${MY_IP}
   
 hal config security authn oauth2 enable
 

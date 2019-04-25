@@ -6,7 +6,7 @@ cp /opt/rosco/config/rosco.yml ~/.hal/default/profiles
 
 ----------------
 
-debianRepository: https://s3.amazonaws.com/spinnaker-debian-repo-jorn/ xenial main
+debianRepository: https://s3.amazonaws.com/spinnaker-debian-repo-anoop/ xenial main
 
 ----------------
 
@@ -23,10 +23,10 @@ debianRepository: https://s3.amazonaws.com/spinnaker-debian-repo-jorn/ xenial ma
         # If not specified, the default templateFile will be used.
         templateFile: aws-ebs.json
       virtualizationSettings:
-      - region: us-east-1
+      - region: ap-south-east-1
         virtualizationType: hvm
         instanceType: t2.micro
-        sourceAmi: ami-43a15f3e
+        sourceAmi: ami-0eb1f21bbd66347fe
         sshUserName: ubuntu
         spotPrice: 0
         spotPriceAutoProduct: Linux/UNIX (Amazon VPC)

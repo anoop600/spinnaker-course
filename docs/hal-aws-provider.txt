@@ -1,3 +1,11 @@
+Environment Variable
+--------------------
+$AWS_ACCOUNT_NAME=
+$ACCOUNT_ID=
+$AWS_ACCESS_KEY_ID=
+$AWS_SECRET_KEY_ID=
+
+
 s3
 ----------
 echo $AWS_SECRET_KEY_ID | hal config storage s3 edit --access-key-id $AWS_ACCESS_KEY_ID --secret-access-key
@@ -5,10 +13,7 @@ hal config storage edit --type s3
 
 AWS Provider
 ------------
-$AWS_ACCOUNT_NAME=
-$ACCOUNT_ID=
-$AWS_ACCESS_KEY_ID=
-$AWS_SECRET_KEY_ID=
+
 
 echo $AWS_SECRET_KEY_ID | hal config provider aws edit --access-key-id $AWS_ACCESS_KEY_ID --secret-access-key
 hal config provider aws account add $AWS_ACCOUNT_NAME --account-id ${ACCOUNT_ID} --assume-role role/SpinnakerManaged

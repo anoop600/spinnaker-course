@@ -23,7 +23,7 @@ debianRepository: https://s3.amazonaws.com/spinnaker-debian-repo-anoop/ xenial m
         # If not specified, the default templateFile will be used.
         templateFile: aws-ebs.json
       virtualizationSettings:
-      - region: ap-south-east-1
+      - region: ap-southeast-1
         virtualizationType: hvm
         instanceType: t2.micro
         sourceAmi: ami-0eb1f21bbd66347fe
